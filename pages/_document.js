@@ -10,7 +10,7 @@ class MyDocument extends Document {
             rel="stylesheet"
           />
         </Head>
-        <body style={ {background: "#d1e4dd"} }>
+        <body style={ {background: "rgba(245,242,241,1)"} }>
           <Main />
           <NextScript />
         </body>
