@@ -91,9 +91,11 @@ const Text = ({ text, id }) => {
 
 const ListItem = ({ value, id }) => {
   return (
+  <ul>
     <li>
       <SpanText text={value.rich_text} id={id} />
     </li>
+    </ul>
   )
 }
 
