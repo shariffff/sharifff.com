@@ -20,10 +20,10 @@ export default function Nav() {
 
       <div>
         <Link href="/">
-          <a className="p-1 text-slate-600 hover:underline sm:p-4">Home</a>
+          <a className="px-4 py-2 text-slate-600 hover:underline sm:p-4">Home</a>
         </Link>
         <Link href="/about">
-          <a className="p-1 text-slate-600 hover:underline sm:p-4">About</a>
+          <a className="px-4 py-2 text-slate-600 hover:underline sm:p-4">About</a>
         </Link>
 
       </div>

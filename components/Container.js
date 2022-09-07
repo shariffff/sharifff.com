@@ -24,7 +24,7 @@ export default function Container(props) {
         {meta.date && <meta property="article:published_time" content={meta.date} />}
       </Head>
       <Nav />
-      <main id="skip" className="py-4 mx-auto prose prose-lg prose-headings:tracking-tight">
+      <main id="skip" className="p-4 p mx-auto prose prose-headings:tracking-tight">
         {children}
         <Footer />
       </main>
