@@ -1,0 +1,20 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.notion-block-e8e65e9364a34e5eade37e2aae0f00c7 main > .notion-title {
+  display: none;
+}
+h1.notion-title {
+  font-size: 3rem;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+.notion-page .notion-text {
+  margin: 10px 0;
+}
