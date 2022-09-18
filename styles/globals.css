@@ -1,12 +1,6 @@
-:root{
-  --notion-font:  'Inter', ui-sans-serif, system-ui, apple-system, BlinkMacSystemFont,
-    'Segoe UI', Helvetica, 'Apple Color Emoji', Arial, sans-serif,
-    'Segoe UI Emoji', 'Segoe UI Symbol';
-}
-
 * {
   box-sizing: border-box;
-  font-family: 'Inter', serif !important;
+  font-family: 'Roboto', serif !important;
 
 }
 
@@ -15,7 +9,8 @@ body {
   margin: 0;
 }
 
-.notion-block-e8e65e9364a34e5eade37e2aae0f00c7 main > .notion-title {
+.notion-block-e8e65e9364a34e5eade37e2aae0f00c7 main > .notion-title,
+ .notion-block-e8e65e9364a34e5eade37e2aae0f00c7 .notion-header .breadcrumbs {
   display: none;
 }
 h1.notion-title {
@@ -26,10 +21,10 @@ h1.notion-title {
 .notion-page .notion-text {
   margin: 10px 0;
 }
-pre.notion-code {
-  min-height: 60px;
-}
 .notion{
   font-size: 1.15rem !important;
-  line-height: 1.7 !important;
+  line-height: 1.8 !important;
+}
+.notion-code-copy {
+    display: none;
 }
