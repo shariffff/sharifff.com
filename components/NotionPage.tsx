@@ -7,7 +7,15 @@ import { getPageTitle } from 'notion-utils'
 
 
 const Code = dynamic(() =>
-  import('react-notion-x/build/third-party/code').then((m) => m.Code)
+  import('react-notion-x/build/third-party/code').then(async (m) => {
+    // additional prism syntaxes
+    await Promise.all([
+      import('prismjs/components/prism-bash.js'),
+      import('prismjs/components/prism-js-templates.js'),
+      import('prismjs/components/prism-sql.js'),
+    ])
+    return m.Code
+  })
 )
 
 export const NotionPage = ({

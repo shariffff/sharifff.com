@@ -1,7 +1,6 @@
-* {
+*:not(code) {
   box-sizing: border-box;
   font-family: 'Roboto', serif !important;
-
 }
 
 body {
@@ -10,7 +9,7 @@ body {
 }
 
 .notion-block-e8e65e9364a34e5eade37e2aae0f00c7 main > .notion-title,
- .notion-block-e8e65e9364a34e5eade37e2aae0f00c7 .notion-header .breadcrumbs {
+.notion-block-e8e65e9364a34e5eade37e2aae0f00c7 .notion-header .breadcrumbs {
   display: none;
 }
 h1.notion-title {
@@ -21,10 +20,10 @@ h1.notion-title {
 .notion-page .notion-text {
   margin: 10px 0;
 }
-.notion{
+.notion {
   font-size: 1.15rem !important;
   line-height: 1.8 !important;
 }
 .notion-code-copy {
-    display: none;
+  display: none;
 }
