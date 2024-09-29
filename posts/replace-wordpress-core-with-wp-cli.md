@@ -15,8 +15,6 @@ The first step will be to check if the core files are intact.
 wp core verify-checksums
 ```
 
-````
-
 If core files are intact, the command will return a response `Success: WordPress installation verifies against checksums.`
 
 Otherwise, we should re-install the core files.
@@ -36,11 +34,11 @@ wp core version
 # to re-install the same version
 wp core download --force --skip-content --version=6.0
 ```
-# to do it in one line
+
+_to do it in one line_
+
+```bash
 wp core download --force --skip-content --version=$(wp core version)
 ```
 
 💡 WP CLI can’t always clean up the leftover files. In such cases, check the core version first, delete the `wp-admin` and `wp-includes` folders and reinstall the core.
-
-
-````

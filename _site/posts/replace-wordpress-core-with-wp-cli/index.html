@@ -98,8 +98,9 @@
                         style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px" />
                 </svg> </a>
             <div class="trigger">
-                <div class="trigger-container"><a class="menu-link" href="/">home</a><a class="menu-link" href="/about/">about</a><a class="menu-link"
-                        href="https://github.com/shariffff" target="_blank" rel="noopener">github</a></div>
+                <div class="trigger-container"><a class="menu-link" href="/">home</a><a class="menu-link"
+                        href="/about/">about</a><a class="menu-link" href="https://github.com/shariffff" target="_blank"
+                        rel="noopener">github</a></div>
             </div>
         </nav>
     </div>
@@ -107,20 +108,15 @@
         <main class="page-content" aria-label="Content">
             <article itemscope itemtype="https://schema.org/BlogPosting">
                 <header class="header">
-                    <div class="tags"> <span itemprop="keywords"> <a class="tag" href="/tags/#cli">CLI</a> </span>
+                    <div class="tags">
+                        <!-- <span itemprop="keywords"> <a class="tag" href="/tags/#cli">CLI</a> </span> -->
                     </div>
-                    <h1 class="header-title" itemprop="headline">Managing WordPress with WP CLI</h1>
-                    <div class="post-meta"> <time datetime="2020-01-25T11:58:47+07:00" itemprop="datePublished"> Jan 25,
+                    <h1 class="header-title" itemprop="headline">Replace WordPress core with WP CLI</h1>
+                    <div class="post-meta"> <time datetime="Wed Mar 09 2022 06:00:00 GMT+0600 (Bangladesh Standard Time)" itemprop="datePublished"> Jan 25,
                             2020 </time> <span itemprop="author" itemscope itemtype="https://schema.org/Person"> <span
                                 itemprop="name">Sharif Mohammad Eunus</span> </span> <time hidden
                             datetime="2020-02-02T16:49:47+07:00" itemprop="dateModified"> Jan 25, 2020 </time> <span
-                            hidden itemprop="publisher" itemtype="Person">Sharif Mohammad Eunus</span> <span hidden
-                            itemprop="image">/apa-itu-shell/shell_evolution.png</span> <span hidden
-                            itemprop="mainEntityOfPage">
-                            <p>WP CLI enables the management of WordPress admin actions through the command line. This
-                                tool is particularly useful for performing actions that are typically done from the
-                                admin area, especially those that are more complex.</p>
-                        </span> </div>
+                            hidden itemprop="publisher" itemtype="Person">Sharif Mohammad Eunus</span> </div>
                 </header>
                 <div class="page-content" itemprop="articleBody">
                     <p>One of the main reasons we often have to replace the WordPress core files is if the site becomes compromised and the malware modifies the core files, causing the dashboard to become inaccessible. In these cases, replacing the core can restore access and help secure the site.</p>
@@ -129,44 +125,32 @@
 <p>The first step will be to check if the core files are intact.</p>
 <pre><code class="language-bash">wp core verify-checksums
 </code></pre>
-<pre><code>
-If core files are intact, the command will return a response `Success: WordPress installation verifies against checksums.`
-
-Otherwise, we should re-install the core files.
-
-```bash
-wp core download --force --skip-content
-```
-
-If the installed WordPress version is 6.0 but the latest version is 6.1, the above command will replace the core files with the latest WordPress version. Also, the `--skip-content` is used to avoid downloading default WP themes and plugins.
-
-Though it’s recommended to use the latest WordPress version, sometimes you may not want to update the WordPress version to the latest for X reason. That’s when we need to specify the `--version` flag.
-
-```bash
-# get the currently installed version of WordPress
+<p>If core files are intact, the command will return a response <code>Success: WordPress installation verifies against checksums.</code></p>
+<p>Otherwise, we should re-install the core files.</p>
+<pre><code class="language-bash">wp core download --force --skip-content
+</code></pre>
+<p>If the installed WordPress version is 6.0 but the latest version is 6.1, the above command will replace the core files with the latest WordPress version. Also, the <code>--skip-content</code> is used to avoid downloading default WP themes and plugins.</p>
+<p>Though it’s recommended to use the latest WordPress version, sometimes you may not want to update the WordPress version to the latest for X reason. That’s when we need to specify the <code>--version</code> flag.</p>
+<pre><code class="language-bash"># get the currently installed version of WordPress
 wp core version
 # the output will be a number e.g. 6.0
 # to re-install the same version
 wp core download --force --skip-content --version=6.0
-```
-# to do it in one line
-wp core download --force --skip-content --version=$(wp core version)
-```
-
-💡 WP CLI can’t always clean up the leftover files. In such cases, check the core version first, delete the `wp-admin` and `wp-includes` folders and reinstall the core.
-
-
 </code></pre>
+<p><em>to do it in one line</em></p>
+<pre><code class="language-bash">wp core download --force --skip-content --version=$(wp core version)
+</code></pre>
+<p>💡 WP CLI can’t always clean up the leftover files. In such cases, check the core version first, delete the <code>wp-admin</code> and <code>wp-includes</code> folders and reinstall the core.</p>
 
                 </div>
             </article>
-        </main> <small class="post-updated-at">updated_at 02-02-2020</small>
-        <nav class="post-nav"> <a class="post-nav-item post-nav-prev" href="/apa-itu-shell/">
-                <div class="nav-arrow">Previous</div> <span class="post-title">Apa Itu Shell</span>
-            </a> </nav>
+        </main>
+        <!-- <nav class="post-nav"> <a class="post-nav-item post-nav-prev" href="/">
+                <div class="nav-arrow">Previous</div> <span class="post-title"></span>
+            </a> </nav> -->
         <footer class="footer"> <a class="footer_item" href="/feed.xml">rss</a> <span class="footer_item">&copy;
                 2024</span> </footer>
-          <script>
+        <script>
             (() => {
                 // Theme switch
                 const body = document.body;

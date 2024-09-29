@@ -98,8 +98,9 @@
                         style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px" />
                 </svg> </a>
             <div class="trigger">
-                <div class="trigger-container"><a class="menu-link" href="/">home</a><a class="menu-link" href="/about/">about</a><a class="menu-link"
-                        href="https://github.com/shariffff" target="_blank" rel="noopener">github</a></div>
+                <div class="trigger-container"><a class="menu-link" href="/">home</a><a class="menu-link"
+                        href="/about/">about</a><a class="menu-link" href="https://github.com/shariffff" target="_blank"
+                        rel="noopener">github</a></div>
             </div>
         </nav>
     </div>
@@ -107,33 +108,28 @@
         <main class="page-content" aria-label="Content">
             <article itemscope itemtype="https://schema.org/BlogPosting">
                 <header class="header">
-                    <div class="tags"> <span itemprop="keywords"> <a class="tag" href="/tags/#cli">CLI</a> </span>
+                    <div class="tags">
+                        <!-- <span itemprop="keywords"> <a class="tag" href="/tags/#cli">CLI</a> </span> -->
                     </div>
-                    <h1 class="header-title" itemprop="headline">Managing WordPress with WP CLI</h1>
-                    <div class="post-meta"> <time datetime="2020-01-25T11:58:47+07:00" itemprop="datePublished"> Jan 25,
+                    <h1 class="header-title" itemprop="headline">WP CLI – Overview</h1>
+                    <div class="post-meta"> <time datetime="Wed Jan 19 2022 06:00:00 GMT+0600 (Bangladesh Standard Time)" itemprop="datePublished"> Jan 25,
                             2020 </time> <span itemprop="author" itemscope itemtype="https://schema.org/Person"> <span
                                 itemprop="name">Sharif Mohammad Eunus</span> </span> <time hidden
                             datetime="2020-02-02T16:49:47+07:00" itemprop="dateModified"> Jan 25, 2020 </time> <span
-                            hidden itemprop="publisher" itemtype="Person">Sharif Mohammad Eunus</span> <span hidden
-                            itemprop="image">/apa-itu-shell/shell_evolution.png</span> <span hidden
-                            itemprop="mainEntityOfPage">
-                            <p>WP CLI enables the management of WordPress admin actions through the command line. This
-                                tool is particularly useful for performing actions that are typically done from the
-                                admin area, especially those that are more complex.</p>
-                        </span> </div>
+                            hidden itemprop="publisher" itemtype="Person">Sharif Mohammad Eunus</span> </div>
                 </header>
                 <div class="page-content" itemprop="articleBody">
                     <p>WP CLI enables the management of WordPress admin actions through the command line. This tool is particularly useful for performing actions that are typically done from the admin area, especially those that are more complex.</p>
 <h2>Installing WP CLI</h2>
 <p>WP CLI might already be installed if you are using a managed hosting service. To check if WP CLI is installed, run the following command in your terminal:</p>
-<pre><code>
+<pre><code class="language-bash">
 wp --info
 
 </code></pre>
 <p>If WP CLI is installed, this command will output the WP CLI version at the end. For detailed instructions on how to install WP CLI on various platforms, refer to <a href="#">The Complete Guide to Installing WP-CLI</a>.</p>
 <h2>Download or Reinstall the WP Core</h2>
 <p>To download the latest WordPress core, use:</p>
-<pre><code>
+<pre><code class="language-bash">
 wp core download
 
 </code></pre>
@@ -150,25 +146,25 @@ wp core download
 <li>Ensure you're in the root directory (e.g., <code>public_html</code>).</li>
 <li>Download the core using:</li>
 </ol>
-<pre><code>
+<pre><code class="language-bash">
 wp core download --skip-content --force --version=[NUMBER]
 
 </code></pre>
 <h2>Install Plugins and Themes</h2>
 <p>To install a plugin or theme:</p>
-<pre><code>
+<pre><code class="language-bash">
 wp plugin install woocommerce
 wp theme install astra
 
 </code></pre>
 <h3>Delete a Plugin or Theme</h3>
-<pre><code>
+<pre><code class="language-bash">
 wp plugin delete woocommerce
 wp theme delete astra
 
 </code></pre>
 <h3>Deactivate a Plugin or Theme</h3>
-<pre><code>
+<pre><code class="language-bash">
 wp plugin deactivate woocommerce
 wp theme deactivate astra
 
@@ -181,14 +177,14 @@ wp theme deactivate astra
 <li><code>--version</code>: Specifies the version to install.</li>
 </ul>
 <p>Example for reinstalling a plugin or theme:</p>
-<pre><code>
+<pre><code class="language-bash">
 wp plugin install woocommerce --force --skip-plugins --skip-themes
 wp theme install astra --force --skip-plugins --skip-themes
 
 </code></pre>
 <h2>Reset User Password</h2>
 <p>If the reset password email fails to send, you can change a user's password with WP CLI:</p>
-<pre><code>
+<pre><code class="language-bash">
 wp user update 123 --user-pass=newpass
 
 </code></pre>
@@ -199,13 +195,13 @@ wp user update 123 --user-pass=newpass
 
                 </div>
             </article>
-        </main> <small class="post-updated-at">updated_at 02-02-2020</small>
-        <nav class="post-nav"> <a class="post-nav-item post-nav-prev" href="/apa-itu-shell/">
-                <div class="nav-arrow">Previous</div> <span class="post-title">Apa Itu Shell</span>
-            </a> </nav>
+        </main>
+        <!-- <nav class="post-nav"> <a class="post-nav-item post-nav-prev" href="/">
+                <div class="nav-arrow">Previous</div> <span class="post-title"></span>
+            </a> </nav> -->
         <footer class="footer"> <a class="footer_item" href="/feed.xml">rss</a> <span class="footer_item">&copy;
                 2024</span> </footer>
-          <script>
+        <script>
             (() => {
                 // Theme switch
                 const body = document.body;

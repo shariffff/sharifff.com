@@ -9,7 +9,7 @@ WP CLI enables the management of WordPress admin actions through the command lin
 
 WP CLI might already be installed if you are using a managed hosting service. To check if WP CLI is installed, run the following command in your terminal:
 
-```
+```bash
 
 wp --info
 
@@ -21,7 +21,7 @@ If WP CLI is installed, this command will output the WP CLI version at the end. 
 
 To download the latest WordPress core, use:
 
-```
+```bash
 
 wp core download
 
@@ -40,7 +40,7 @@ Options include:
 3. Ensure you're in the root directory (e.g., `public_html`).
 4. Download the core using:
 
-```
+```bash
 
 wp core download --skip-content --force --version=[NUMBER]
 
@@ -50,7 +50,7 @@ wp core download --skip-content --force --version=[NUMBER]
 
 To install a plugin or theme:
 
-```
+```bash
 
 wp plugin install woocommerce
 wp theme install astra
@@ -59,7 +59,7 @@ wp theme install astra
 
 ### Delete a Plugin or Theme
 
-```
+```bash
 
 wp plugin delete woocommerce
 wp theme delete astra
@@ -68,7 +68,7 @@ wp theme delete astra
 
 ### Deactivate a Plugin or Theme
 
-```
+```bash
 
 wp plugin deactivate woocommerce
 wp theme deactivate astra
@@ -84,7 +84,7 @@ Additional options for installation:
 
 Example for reinstalling a plugin or theme:
 
-```
+```bash
 
 wp plugin install woocommerce --force --skip-plugins --skip-themes
 wp theme install astra --force --skip-plugins --skip-themes
@@ -95,7 +95,7 @@ wp theme install astra --force --skip-plugins --skip-themes
 
 If the reset password email fails to send, you can change a user's password with WP CLI:
 
-```
+```bash
 
 wp user update 123 --user-pass=newpass
 
