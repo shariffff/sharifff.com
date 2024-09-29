@@ -2153,3 +2153,6 @@ body[data-theme='dark']
 	input[type='search']::-webkit-input-placeholder {
 	color: rgba(128, 128, 128, 0.8);
 }
+ li code {
+    color: #9a6014
+}

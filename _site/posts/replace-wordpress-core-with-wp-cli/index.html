@@ -44,6 +44,8 @@
     <meta name="application-name" content="Jekyll Klise" />
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="theme-color" content="#2c2c2c" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-nord.min.css">
     <link rel="stylesheet" href="/main.css">
 </head>
 
@@ -120,27 +122,27 @@
                 </header>
                 <div class="page-content" itemprop="articleBody">
                     <p>One of the main reasons we often have to replace the WordPress core files is if the site becomes compromised and the malware modifies the core files, causing the dashboard to become inaccessible. In these cases, replacing the core can restore access and help secure the site.</p>
-<p>⚠️ <strong>Make sure to take a backup before the cleanup.</strong></p>
+<blockquote>
+<p>⚠️ Make sure to take a backup before the cleanup.</p>
+</blockquote>
 <h3>Re-install</h3>
 <p>The first step will be to check if the core files are intact.</p>
-<pre><code class="language-bash">wp core verify-checksums
-</code></pre>
+<pre class="language-bash"><code class="language-bash">wp core verify-checksums</code></pre>
 <p>If core files are intact, the command will return a response <code>Success: WordPress installation verifies against checksums.</code></p>
 <p>Otherwise, we should re-install the core files.</p>
-<pre><code class="language-bash">wp core download --force --skip-content
-</code></pre>
+<pre class="language-bash"><code class="language-bash">wp core download <span class="token parameter variable">--force</span> --skip-content</code></pre>
 <p>If the installed WordPress version is 6.0 but the latest version is 6.1, the above command will replace the core files with the latest WordPress version. Also, the <code>--skip-content</code> is used to avoid downloading default WP themes and plugins.</p>
 <p>Though it’s recommended to use the latest WordPress version, sometimes you may not want to update the WordPress version to the latest for X reason. That’s when we need to specify the <code>--version</code> flag.</p>
-<pre><code class="language-bash"># get the currently installed version of WordPress
+<pre class="language-bash"><code class="language-bash"><span class="token comment"># get the currently installed version of WordPress</span>
 wp core version
-# the output will be a number e.g. 6.0
-# to re-install the same version
-wp core download --force --skip-content --version=6.0
-</code></pre>
+<span class="token comment"># the output will be a number e.g. 6.0</span>
+<span class="token comment"># to re-install the same version</span>
+wp core download <span class="token parameter variable">--force</span> --skip-content <span class="token parameter variable">--version</span><span class="token operator">=</span><span class="token number">6.0</span></code></pre>
 <p><em>to do it in one line</em></p>
-<pre><code class="language-bash">wp core download --force --skip-content --version=$(wp core version)
-</code></pre>
+<pre class="language-bash"><code class="language-bash">wp core download <span class="token parameter variable">--force</span> --skip-content <span class="token parameter variable">--version</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>wp core version<span class="token variable">)</span></span></code></pre>
+<blockquote>
 <p>💡 WP CLI can’t always clean up the leftover files. In such cases, check the core version first, delete the <code>wp-admin</code> and <code>wp-includes</code> folders and reinstall the core.</p>
+</blockquote>
 
                 </div>
             </article>
