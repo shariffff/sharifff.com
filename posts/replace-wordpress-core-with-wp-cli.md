@@ -5,7 +5,7 @@ date: 2022-03-09
 
 One of the main reasons we often have to replace the WordPress core files is if the site becomes compromised and the malware modifies the core files, causing the dashboard to become inaccessible. In these cases, replacing the core can restore access and help secure the site.
 
-⚠️ **Make sure to take a backup before the cleanup.**
+> ⚠️ Make sure to take a backup before the cleanup.
 
 ### Re-install
 
@@ -41,4 +41,4 @@ _to do it in one line_
 wp core download --force --skip-content --version=$(wp core version)
 ```
 
-💡 WP CLI can’t always clean up the leftover files. In such cases, check the core version first, delete the `wp-admin` and `wp-includes` folders and reinstall the core.
+> 💡 WP CLI can’t always clean up the leftover files. In such cases, check the core version first, delete the `wp-admin` and `wp-includes` folders and reinstall the core.

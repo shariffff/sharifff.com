@@ -33,7 +33,7 @@ Options include:
 - `--skip-content`: Skips downloading the `wp-content` folder, thus excluding default themes and plugins.
 - `--version`: Specifies the version of WordPress to install. If not set, the latest version is installed.
 
-### Reinstalling WordPress Core Files
+## Reinstalling WordPress Core Files
 
 1. Verify core files with `wp core verify-checksums`.
 2. Check the currently installed version with `wp core version` to avoid accidental updates.
@@ -57,7 +57,7 @@ wp theme install astra
 
 ```
 
-### Delete a Plugin or Theme
+## Delete a Plugin or Theme
 
 ```bash
 
@@ -66,7 +66,7 @@ wp theme delete astra
 
 ```
 
-### Deactivate a Plugin or Theme
+## Deactivate a Plugin or Theme
 
 ```bash
 
@@ -102,4 +102,4 @@ wp user update 123 --user-pass=newpass
 ```
 
 - `123` is the user ID, but you can also use the user's email or username.
-- To list users, use `wp user list`.
+- To list users, use `wp user list`
