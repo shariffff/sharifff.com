@@ -47,6 +47,9 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-nord.min.css">
     <link rel="stylesheet" href="/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&display=swap" rel="stylesheet">
 </head>
 
 <body data-theme="dark" class="notransition">
@@ -123,7 +126,7 @@
                 <div class="page-content" itemprop="articleBody">
                     <p>One of the main reasons we often have to replace the WordPress core files is if the site becomes compromised and the malware modifies the core files, causing the dashboard to become inaccessible. In these cases, replacing the core can restore access and help secure the site.</p>
 <blockquote>
-<p>⚠️ Make sure to take a backup before the cleanup.</p>
+<p>Make sure to take a backup before the cleanup.</p>
 </blockquote>
 <h3>Re-install</h3>
 <p>The first step will be to check if the core files are intact.</p>
@@ -141,7 +144,7 @@ wp core download <span class="token parameter variable">--force</span> --skip-co
 <p><em>to do it in one line</em></p>
 <pre class="language-bash"><code class="language-bash">wp core download <span class="token parameter variable">--force</span> --skip-content <span class="token parameter variable">--version</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>wp core version<span class="token variable">)</span></span></code></pre>
 <blockquote>
-<p>💡 WP CLI can’t always clean up the leftover files. In such cases, check the core version first, delete the <code>wp-admin</code> and <code>wp-includes</code> folders and reinstall the core.</p>
+<p>WP CLI can’t always clean up the leftover files. In such cases, check the core version first, delete the <code>wp-admin</code> and <code>wp-includes</code> folders and reinstall the core.</p>
 </blockquote>
 
                 </div>
