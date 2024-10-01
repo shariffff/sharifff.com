@@ -7,8 +7,16 @@
 	transition: background-color 75ms ease-in, border-color 75ms ease-in;
 }
 :root {
-	--color--text: hsl(202.5, 7%, 77.6%);
-	--color--accent: hsl(215.79999999999995, 76%, 55.9%);
+	--color-background: hsl(36, 12.2%, 92%);
+
+	--color-text: hsl(0, 0%, 11.8%);
+	--color-accent: hsl(192.89999999999998, 75.4%, 25.5%);
+	--font-family: 'IBM Plex Mono', monospace;
+}
+body[data-theme='dark'] {
+	--color-background: #05010d;
+	--color-text: hsl(202.5, 7%, 77.6%);
+	--color-accent: hsl(215.79999999999995, 76%, 55.9%);
 }
 .notransition {
 	-webkit-transition: none;
@@ -49,8 +57,8 @@ body {
 	overflow-x: hidden;
 	position: relative;
 	color: #434648;
-	background-color: #fff;
-	font: 400 16px/1.85 'IBM Plex Mono', monospace;
+	background-color: var(--color-background);
+	font: 400 16px/1.85 var(--font-family);
 	-webkit-text-size-adjust: 100%;
 	-webkit-font-smoothing: antialiased;
 	-webkit-font-feature-settings: 'kern' 1;
@@ -101,7 +109,7 @@ kbd {
 	display: inline-block;
 	font-size: 14px;
 	line-height: 1.4;
-	font-family: Consolas, monospace;
+	font-family: var(--font-family);
 	margin: 0 0.1em;
 	font-weight: 700;
 	padding: 0.01em 0.4em;
@@ -183,7 +191,7 @@ li {
 }
 
 li:before {
-	color: #0d122b;
+	color: var(--color-accent);
 }
 
 li > ul,
@@ -198,7 +206,7 @@ h3,
 h4,
 h5,
 h6 {
-	color: #0d122b;
+	color: var(--color-accent);
 	font-weight: normal;
 }
 
@@ -271,12 +279,12 @@ em {
 }
 
 blockquote {
-	color: #6b7886;
+	color: var(--color-accent);
 	font-style: italic;
 	text-align: center;
 	opacity: 0.9;
-	border-top: 1px solid #ececec;
-	border-bottom: 1px solid #ececec;
+	border-top: 1px solid #dddddd;
+	border-bottom: 1px solid #dddddd;
 	padding: 10px;
 	margin-left: 10px;
 	margin-right: 10px;
@@ -606,7 +614,6 @@ mark,
 .posts-item-note {
 	font-size: 16px;
 	margin-bottom: 5px;
-	color: #0d122b;
 }
 
 .post-item {
@@ -916,9 +923,8 @@ mark,
 .page-content h4,
 .page-content h5,
 .page-content h6 {
-	color: #0d122b;
 	font-weight: normal;
-	margin-top: 30px;
+	/* margin-top: 30px; */
 	margin-bottom: 0;
 	font-size: initial;
 }
@@ -1047,7 +1053,7 @@ mark,
 }
 
 .post-updated-at {
-	font-family: 'Ubuntu mono', 'monospace';
+	font-family: var(--font-family);
 }
 
 @keyframes fadein {
@@ -1090,7 +1096,7 @@ mark,
 }
 
 code {
-	font-family: Consolas, monospace;
+	font-family: var(--font-family);
 	text-rendering: optimizeLegibility;
 	font-feature-settings: 'calt' 1;
 	font-variant-ligatures: normal;
@@ -1278,7 +1284,7 @@ pre > code {
 }
 
 body[data-theme='dark'] {
-	color: var(--color--text);
+	color: var(--color-text);
 	background-color: #05010d;
 }
 
@@ -1289,7 +1295,7 @@ body[data-theme='dark'] h4,
 body[data-theme='dark'] h5,
 body[data-theme='dark'] h6 {
 	/* color: #eaeaea; */
-	color: var(--color--accent);
+	color: var(--color-accent);
 }
 
 body[data-theme='dark'] table thead {
@@ -1304,7 +1310,7 @@ body[data-theme='dark'] table tr {
 }
 
 body[data-theme='dark'] .page-content a {
-	color: var(--color--accent);
+	color: var(--color-accent);
 }
 
 body[data-theme='dark'] .page-content a:hover,
@@ -1326,7 +1332,7 @@ body[data-theme='dark'] .page-content h6 .anchor-head {
 	color: #ff5277;
 }
 
-body[data-theme='dark'] code.highlighter-rouge {
+body[data-theme='dark'] .pre[class*='language-'] {
 	background-color: #1b1d25;
 }
 
@@ -1365,12 +1371,8 @@ body[data-theme='dark'] a:focus {
 	outline-color: rgba(255, 82, 119, 0.6);
 }
 
-body[data-theme='dark'] li:before {
-	color: var(--color--accent);
-}
-
 body[data-theme='dark'] blockquote {
-	color: #767f87;
+	/* color: #767f87; */
 	border-color: #1b1d25;
 }
 
@@ -1419,7 +1421,7 @@ body[data-theme='dark'] .post-item:not(:first-child) {
 }
 
 body[data-theme='dark'] .post-item .post-item-date {
-	color: var(--color--text);
+	color: var(--color-text);
 }
 
 body[data-theme='dark'] .post-item .post-item-title a {
@@ -1498,13 +1500,14 @@ body[data-theme='dark']
 	input[type='search']::-webkit-input-placeholder {
 	color: rgba(128, 128, 128, 0.8);
 }
-/* li code {
-	color: #9a6014;
-} */
+li code,
+p code {
+	background: none;
+}
 
 code,
 code[class*='language-'],
 pre[class*='language-'] {
-	font-family: 'IBM Plex Mono', monospace;
+	font-family: var(--font-family);
 	background: hsl(260, 85.7%, 5.1%);
 }
