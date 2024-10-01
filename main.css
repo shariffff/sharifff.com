@@ -59,6 +59,8 @@ body {
 	font-feature-settings: 'kern' 1;
 	font-kerning: normal;
 	box-sizing: border-box;
+	font-size: 0.95rem;
+	line-height: 2.25;
 }
 
 h1,
@@ -603,7 +605,6 @@ mark,
 
 .posts-item-note {
 	font-size: 16px;
-	font-weight: 700;
 	margin-bottom: 5px;
 	color: #0d122b;
 }
