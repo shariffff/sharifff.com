@@ -15,7 +15,7 @@ wp --info
 
 ```
 
-If WP CLI is installed, this command will output the WP CLI version at the end. For detailed instructions on how to install WP CLI on various platforms, refer to [The Complete Guide to Installing WP-CLI](#).
+If WP CLI is installed, this command will output the WP CLI version at the end. For detailed instructions on how to install WP CLI on various platforms, refer to [The Complete Guide to Installing WP-CLI](https://deliciousbrains.com/complete-guide-to-installing-wp-cli/).
 
 ## Download or Reinstall the WP Core
 

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-nord.min.css');
 * {
 	-webkit-transition: background-color 75ms ease-in, border-color 75ms ease-in;
 	-moz-transition: background-color 75ms ease-in, border-color 75ms ease-in;
@@ -258,7 +259,7 @@ h6 > a:hover {
 
 a {
 	color: inherit;
-	text-decoration-color: #d2c7c7;
+	text-decoration-color: var(--color-accent);
 }
 
 a:hover {
@@ -321,7 +322,7 @@ blockquote > :last-child {
 }
 
 u {
-	text-decoration-color: #d2c7c7;
+	text-decoration-color: var(--color-accent);
 }
 
 small {
@@ -873,8 +874,7 @@ mark,
 }
 
 .page-content a {
-	color: #003fff;
-	text-decoration: none;
+	color: var(--color-accent);
 }
 
 .page-content a[target='_blank']::after {
@@ -1356,11 +1356,6 @@ body[data-theme='dark'] .post-meta time::after {
 
 body[data-theme='dark'] .post-meta span[itemprop='author'] {
 	border-color: #1b1d25;
-}
-
-body[data-theme='dark'] a {
-	color: inherit;
-	text-decoration-color: #4a4d56;
 }
 
 body[data-theme='dark'] a:hover {
