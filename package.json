@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "type": "module",
   "dependencies": {
-    "@11ty/eleventy": "^2.0.1",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
-    "luxon": "^3.5.0"
+    "@11ty/eleventy": "3.0.0-alpha.20",
+    "@shikijs/markdown-it": "^1.21.0",
+    "luxon": "^3.5.0",
+    "markdown-it": "^14.1.0",
+    "shiki": "^1.21.0"
   },
   "scripts": {
     "start": "npx @11ty/eleventy --serve"

@@ -141,19 +141,19 @@
 </blockquote>
 <h3>Re-install</h3>
 <p>The first step will be to check if the core files are intact.</p>
-<pre class="language-bash"><code class="language-bash">wp core verify-checksums</code></pre>
+<pre class="shiki aurora-x" style="background-color:#07090F;color:#bbbbbb" tabindex="0"><code class="language-bash"><span class="line"><span style="color:#FFCB6B">wp</span><span style="color:#C3E88D"> core</span><span style="color:#C3E88D"> verify-checksums</span></span></code></pre>
 <p>If core files are intact, the command will return a response <code>Success: WordPress installation verifies against checksums.</code></p>
 <p>Otherwise, we should re-install the core files.</p>
-<pre class="language-bash"><code class="language-bash">wp core download <span class="token parameter variable">--force</span> --skip-content</code></pre>
+<pre class="shiki aurora-x" style="background-color:#07090F;color:#bbbbbb" tabindex="0"><code class="language-bash"><span class="line"><span style="color:#FFCB6B">wp</span><span style="color:#C3E88D"> core</span><span style="color:#C3E88D"> download</span><span style="color:#C3E88D"> --force</span><span style="color:#C3E88D"> --skip-content</span></span></code></pre>
 <p>If the installed WordPress version is 6.0 but the latest version is 6.1, the above command will replace the core files with the latest WordPress version. Also, the <code>--skip-content</code> is used to avoid downloading default WP themes and plugins.</p>
 <p>Though it’s recommended to use the latest WordPress version, sometimes you may not want to update the WordPress version to the latest for X reason. That’s when we need to specify the <code>--version</code> flag.</p>
-<pre class="language-bash"><code class="language-bash"><span class="token comment"># get the currently installed version of WordPress</span>
-wp core version
-<span class="token comment"># the output will be a number e.g. 6.0</span>
-<span class="token comment"># to re-install the same version</span>
-wp core download <span class="token parameter variable">--force</span> --skip-content <span class="token parameter variable">--version</span><span class="token operator">=</span><span class="token number">6.0</span></code></pre>
+<pre class="shiki aurora-x" style="background-color:#07090F;color:#bbbbbb" tabindex="0"><code class="language-bash"><span class="line"><span style="color:#546E7A;font-style:italic"># get the currently installed version of WordPress</span></span>
+<span class="line"><span style="color:#FFCB6B">wp</span><span style="color:#C3E88D"> core</span><span style="color:#C3E88D"> version</span></span>
+<span class="line"><span style="color:#546E7A;font-style:italic"># the output will be a number e.g. 6.0</span></span>
+<span class="line"><span style="color:#546E7A;font-style:italic"># to re-install the same version</span></span>
+<span class="line"><span style="color:#FFCB6B">wp</span><span style="color:#C3E88D"> core</span><span style="color:#C3E88D"> download</span><span style="color:#C3E88D"> --force</span><span style="color:#C3E88D"> --skip-content</span><span style="color:#C3E88D"> --version=6.0</span></span></code></pre>
 <p><em>to do it in one line</em></p>
-<pre class="language-bash"><code class="language-bash">wp core download <span class="token parameter variable">--force</span> --skip-content <span class="token parameter variable">--version</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>wp core version<span class="token variable">)</span></span></code></pre>
+<pre class="shiki aurora-x" style="background-color:#07090F;color:#bbbbbb" tabindex="0"><code class="language-bash"><span class="line"><span style="color:#FFCB6B">wp</span><span style="color:#C3E88D"> core</span><span style="color:#C3E88D"> download</span><span style="color:#C3E88D"> --force</span><span style="color:#C3E88D"> --skip-content</span><span style="color:#C3E88D"> --version=</span><span style="color:#89DDFF">$(</span><span style="color:#FFCB6B">wp</span><span style="color:#C3E88D"> core version</span><span style="color:#89DDFF">)</span></span></code></pre>
 <blockquote>
 <p>WP CLI can’t always clean up the leftover files. In such cases, check the core version first, delete the <code>wp-admin</code> and <code>wp-includes</code> folders and reinstall the core.</p>
 </blockquote>

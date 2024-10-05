@@ -138,15 +138,15 @@
                 <p>WP CLI enables the management of WordPress admin actions through the command line. This tool is particularly useful for performing actions that are typically done from the admin area, especially those that are more complex.</p>
 <h2>Installing WP CLI</h2>
 <p>WP CLI might already be installed if you are using a managed hosting service. To check if WP CLI is installed, run the following command in your terminal:</p>
-<pre class="language-bash"><code class="language-bash">
-wp <span class="token parameter variable">--info</span>
-</code></pre>
+<pre class="shiki aurora-x" style="background-color:#07090F;color:#bbbbbb" tabindex="0"><code class="language-bash"><span class="line"></span>
+<span class="line"><span style="color:#FFCB6B">wp</span><span style="color:#C3E88D"> --info</span></span>
+<span class="line"></span></code></pre>
 <p>If WP CLI is installed, this command will output the WP CLI version at the end. For detailed instructions on how to install WP CLI on various platforms, refer to <a href="https://deliciousbrains.com/complete-guide-to-installing-wp-cli/">The Complete Guide to Installing WP-CLI</a>.</p>
 <h2>Download or Reinstall the WP Core</h2>
 <p>To download the latest WordPress core, use:</p>
-<pre class="language-bash"><code class="language-bash">
-wp core download
-</code></pre>
+<pre class="shiki aurora-x" style="background-color:#07090F;color:#bbbbbb" tabindex="0"><code class="language-bash"><span class="line"></span>
+<span class="line"><span style="color:#FFCB6B">wp</span><span style="color:#C3E88D"> core</span><span style="color:#C3E88D"> download</span></span>
+<span class="line"></span></code></pre>
 <p>Options include:</p>
 <ul>
 <li><code>--force</code>: Overrides the existing installation. Use this if you're reinstalling and WP is already in the target directory.</li>
@@ -160,25 +160,25 @@ wp core download
 <li>Ensure you're in the root directory (e.g., <code>public_html</code>).</li>
 <li>Download the core using:</li>
 </ol>
-<pre class="language-bash"><code class="language-bash">
-wp core download --skip-content <span class="token parameter variable">--force</span> <span class="token parameter variable">--version</span><span class="token operator">=</span><span class="token punctuation">[</span>NUMBER<span class="token punctuation">]</span>
-</code></pre>
+<pre class="shiki aurora-x" style="background-color:#07090F;color:#bbbbbb" tabindex="0"><code class="language-bash"><span class="line"></span>
+<span class="line"><span style="color:#FFCB6B">wp</span><span style="color:#C3E88D"> core</span><span style="color:#C3E88D"> download</span><span style="color:#C3E88D"> --skip-content</span><span style="color:#C3E88D"> --force</span><span style="color:#C3E88D"> --version=</span><span style="color:#89DDFF">[</span><span style="color:#C3E88D">NUMBER</span><span style="color:#89DDFF">]</span></span>
+<span class="line"></span></code></pre>
 <h2>Install Plugins and Themes</h2>
 <p>To install a plugin or theme:</p>
-<pre class="language-bash"><code class="language-bash">
-wp plugin <span class="token function">install</span> woocommerce
-wp theme <span class="token function">install</span> astra
-</code></pre>
+<pre class="shiki aurora-x" style="background-color:#07090F;color:#bbbbbb" tabindex="0"><code class="language-bash"><span class="line"></span>
+<span class="line"><span style="color:#FFCB6B">wp</span><span style="color:#C3E88D"> plugin</span><span style="color:#C3E88D"> install</span><span style="color:#C3E88D"> woocommerce</span></span>
+<span class="line"><span style="color:#FFCB6B">wp</span><span style="color:#C3E88D"> theme</span><span style="color:#C3E88D"> install</span><span style="color:#C3E88D"> astra</span></span>
+<span class="line"></span></code></pre>
 <h2>Delete a Plugin or Theme</h2>
-<pre class="language-bash"><code class="language-bash">
-wp plugin delete woocommerce
-wp theme delete astra
-</code></pre>
+<pre class="shiki aurora-x" style="background-color:#07090F;color:#bbbbbb" tabindex="0"><code class="language-bash"><span class="line"></span>
+<span class="line"><span style="color:#FFCB6B">wp</span><span style="color:#C3E88D"> plugin</span><span style="color:#C3E88D"> delete</span><span style="color:#C3E88D"> woocommerce</span></span>
+<span class="line"><span style="color:#FFCB6B">wp</span><span style="color:#C3E88D"> theme</span><span style="color:#C3E88D"> delete</span><span style="color:#C3E88D"> astra</span></span>
+<span class="line"></span></code></pre>
 <h2>Deactivate a Plugin or Theme</h2>
-<pre class="language-bash"><code class="language-bash">
-wp plugin deactivate woocommerce
-wp theme deactivate astra
-</code></pre>
+<pre class="shiki aurora-x" style="background-color:#07090F;color:#bbbbbb" tabindex="0"><code class="language-bash"><span class="line"></span>
+<span class="line"><span style="color:#FFCB6B">wp</span><span style="color:#C3E88D"> plugin</span><span style="color:#C3E88D"> deactivate</span><span style="color:#C3E88D"> woocommerce</span></span>
+<span class="line"><span style="color:#FFCB6B">wp</span><span style="color:#C3E88D"> theme</span><span style="color:#C3E88D"> deactivate</span><span style="color:#C3E88D"> astra</span></span>
+<span class="line"></span></code></pre>
 <p>Additional options for installation:</p>
 <ul>
 <li><code>--force</code>: Reinstalls the plugin or theme.</li>
@@ -187,15 +187,15 @@ wp theme deactivate astra
 <li><code>--version</code>: Specifies the version to install.</li>
 </ul>
 <p>Example for reinstalling a plugin or theme:</p>
-<pre class="language-bash"><code class="language-bash">
-wp plugin <span class="token function">install</span> woocommerce <span class="token parameter variable">--force</span> --skip-plugins --skip-themes
-wp theme <span class="token function">install</span> astra <span class="token parameter variable">--force</span> --skip-plugins --skip-themes
-</code></pre>
+<pre class="shiki aurora-x" style="background-color:#07090F;color:#bbbbbb" tabindex="0"><code class="language-bash"><span class="line"></span>
+<span class="line"><span style="color:#FFCB6B">wp</span><span style="color:#C3E88D"> plugin</span><span style="color:#C3E88D"> install</span><span style="color:#C3E88D"> woocommerce</span><span style="color:#C3E88D"> --force</span><span style="color:#C3E88D"> --skip-plugins</span><span style="color:#C3E88D"> --skip-themes</span></span>
+<span class="line"><span style="color:#FFCB6B">wp</span><span style="color:#C3E88D"> theme</span><span style="color:#C3E88D"> install</span><span style="color:#C3E88D"> astra</span><span style="color:#C3E88D"> --force</span><span style="color:#C3E88D"> --skip-plugins</span><span style="color:#C3E88D"> --skip-themes</span></span>
+<span class="line"></span></code></pre>
 <h2>Reset User Password</h2>
 <p>If the reset password email fails to send, you can change a user's password with WP CLI:</p>
-<pre class="language-bash"><code class="language-bash">
-wp user update <span class="token number">123</span> --user-pass<span class="token operator">=</span>newpass
-</code></pre>
+<pre class="shiki aurora-x" style="background-color:#07090F;color:#bbbbbb" tabindex="0"><code class="language-bash"><span class="line"></span>
+<span class="line"><span style="color:#FFCB6B">wp</span><span style="color:#C3E88D"> user</span><span style="color:#C3E88D"> update</span><span style="color:#F78C6C"> 123</span><span style="color:#C3E88D"> --user-pass=newpass</span></span>
+<span class="line"></span></code></pre>
 <ul>
 <li><code>123</code> is the user ID, but you can also use the user's email or username.</li>
 <li>To list users, use <code>wp user list</code></li>

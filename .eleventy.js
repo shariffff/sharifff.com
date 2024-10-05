@@ -1,9 +1,16 @@
-const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-const { DateTime } = require("luxon");
+import { DateTime } from "luxon";
+import MarkdownIt from "markdown-it";
+import Shiki from "@shikijs/markdown-it";
 
-module.exports = function(eleventyConfig) {
-	eleventyConfig.addPlugin(syntaxHighlight);
+let markdownLib = MarkdownIt()
+	.use(
+		await Shiki({
+			theme: "aurora-x",
+		}),
+	);
+	export default async function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy("main.css");
+	eleventyConfig.setLibrary("md", markdownLib);
 
 	eleventyConfig.addFilter("readableDate", dateObj => {
         return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat("dd LLL yyyy");
