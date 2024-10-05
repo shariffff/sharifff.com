@@ -144,15 +144,11 @@
 <p>If WP CLI is installed, this command will output the WP CLI version at the end. For detailed instructions on how to install WP CLI on various platforms, refer to <a href="https://deliciousbrains.com/complete-guide-to-installing-wp-cli/">The Complete Guide to Installing WP-CLI</a>.</p>
 <h2>Download or Reinstall the WP Core</h2>
 <p>To download the latest WordPress core, use:</p>
-<pre class="shiki aurora-x" style="background-color:#07090F;color:#bbbbbb" tabindex="0"><code class="language-bash"><span class="line"></span>
-<span class="line"><span style="color:#FFCB6B">wp</span><span style="color:#C3E88D"> core</span><span style="color:#C3E88D"> download</span></span>
-<span class="line"></span></code></pre>
-<p>Options include:</p>
-<ul>
-<li><code>--force</code>: Overrides the existing installation. Use this if you're reinstalling and WP is already in the target directory.</li>
-<li><code>--skip-content</code>: Skips downloading the <code>wp-content</code> folder, thus excluding default themes and plugins.</li>
-<li><code>--version</code>: Specifies the version of WordPress to install. If not set, the latest version is installed.</li>
-</ul>
+<pre class="shiki aurora-x" style="background-color:#07090F;color:#bbbbbb" tabindex="0"><code class="language-bash"><span class="line"><span style="color:#FFCB6B">wp</span><span style="color:#C3E88D"> core</span><span style="color:#C3E88D"> download</span></span></code></pre>
+<p>Options include:
+<code>--force</code>: Overrides the existing installation. Use this if you're reinstalling and WP is already in the target directory.
+<code>--skip-content</code>: Skips downloading the <code>wp-content</code> folder, thus excluding default themes and plugins.
+<code>--version</code>: Specifies the version of WordPress to install. If not set, the latest version is installed.</p>
 <h2>Reinstalling WordPress Core Files</h2>
 <ol>
 <li>Verify core files with <code>wp core verify-checksums</code>.</li>

@@ -35,7 +35,7 @@ wp core version
 wp core download --force --skip-content --version=6.0
 ```
 
-_to do it in one line_
+**to do it in one line**
 
 ```bash
 wp core download --force --skip-content --version=$(wp core version)

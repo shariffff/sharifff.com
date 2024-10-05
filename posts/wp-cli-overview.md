@@ -22,16 +22,13 @@ If WP CLI is installed, this command will output the WP CLI version at the end. 
 To download the latest WordPress core, use:
 
 ```bash
-
 wp core download
-
 ```
 
 Options include:
-
-- `--force`: Overrides the existing installation. Use this if you're reinstalling and WP is already in the target directory.
-- `--skip-content`: Skips downloading the `wp-content` folder, thus excluding default themes and plugins.
-- `--version`: Specifies the version of WordPress to install. If not set, the latest version is installed.
+`--force`: Overrides the existing installation. Use this if you're reinstalling and WP is already in the target directory.
+`--skip-content`: Skips downloading the `wp-content` folder, thus excluding default themes and plugins.
+`--version`: Specifies the version of WordPress to install. If not set, the latest version is installed.
 
 ## Reinstalling WordPress Core Files
 
