@@ -1,0 +1,110 @@
+<!DOCTYPE html><html lang="en"> <head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v4.15.12"><!-- Font preloads --><link rel="preload" href="/fonts/atkinson-regular.woff" as="font" type="font/woff" crossorigin><link rel="preload" href="/fonts/atkinson-bold.woff" as="font" type="font/woff" crossorigin><!-- Canonical URL --><link rel="canonical" href="https://sharifff.com/blog/wp-cli-overview/"><!-- Primary Meta Tags --><title>WP CLI – Overview</title><meta name="title" content="WP CLI – Overview"><meta name="description" content=""><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://sharifff.com/blog/wp-cli-overview/"><meta property="og:title" content="WP CLI – Overview"><meta property="og:description" content=""><meta property="og:image" content="https://sharifff.com/blog-placeholder-1.jpg"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://sharifff.com/blog/wp-cli-overview/"><meta property="twitter:title" content="WP CLI – Overview"><meta property="twitter:description" content=""><meta property="twitter:image" content="https://sharifff.com/blog-placeholder-1.jpg"><link rel="stylesheet" href="/_astro/_slug_.BtQgwSxT.css"><script type="module">const o=document.body,r=o.getAttribute("data-theme"),c=t=>{t==="dark"?o.setAttribute("data-theme","dark"):t==="light"?o.removeAttribute("data-theme"):localStorage.setItem("theme",r)};c(localStorage.getItem("theme"));setTimeout(()=>o.classList.remove("notransition"),75);(()=>{const t=document.body,a=document.getElementById("mode"),m=e=>{e==="dark"?(localStorage.setItem("theme","light"),t.removeAttribute("data-theme")):e==="light"?(localStorage.setItem("theme","dark"),t.setAttribute("data-theme","dark")):initTheme(e)};a.addEventListener("click",()=>m(localStorage.getItem("theme"))),document.getElementById("menu-trigger").addEventListener("change",function(){const e=document.querySelector(".wrapper");this.checked?e.classList.add("blurry"):e.classList.remove("blurry")})})();
+</script></head> <body data-theme="dark" class="notransition"> <header>  <div class="navbar" role="navigation"> <nav class="menu"> <input type="checkbox" id="menu-trigger" class="menu-trigger"> <label for="menu-trigger"> <span class="menu-icon"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 512 512"> <path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z"></path> </svg> </span> </label> <a id="mode"> <svg class="mode-sunny" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 512 512"> <title>LIGHT</title> <line x1="256" y1="48" x2="256" y2="96" style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"></line> <line x1="256" y1="416" x2="256" y2="464" style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"></line> <line x1="403.08" y1="108.92" x2="369.14" y2="142.86" style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"></line> <line x1="142.86" y1="369.14" x2="108.92" y2="403.08" style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"></line> <line x1="464" y1="256" x2="416" y2="256" style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"></line> <line x1="96" y1="256" x2="48" y2="256" style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"></line> <line x1="403.08" y1="403.08" x2="369.14" y2="369.14" style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"></line> <line x1="142.86" y1="142.86" x2="108.92" y2="108.92" style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"></line> <circle cx="256" cy="256" r="80" style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"></circle> </svg> <svg class="mode-moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 512 512"> <title>DARK</title> <line x1="256" y1="48" x2="256" y2="96" style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"></line> <line x1="256" y1="416" x2="256" y2="464" style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"></line> <line x1="403.08" y1="108.92" x2="369.14" y2="142.86" style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"></line> <line x1="142.86" y1="369.14" x2="108.92" y2="403.08" style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"></line> <line x1="464" y1="256" x2="416" y2="256" style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"></line> <line x1="96" y1="256" x2="48" y2="256" style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"></line> <line x1="403.08" y1="403.08" x2="369.14" y2="369.14" style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"></line> <line x1="142.86" y1="142.86" x2="108.92" y2="108.92" style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"></line> <circle cx="256" cy="256" r="80" style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"></circle> </svg> </a> <div class="trigger"> <div class="trigger-container"> <a href="/" class="menu-link"> Home </a> <a href="/about" class="menu-link"> About </a> <a class="menu-link" href="https://github.com/shariffff" target="_blank" rel="noopener">github</a> </div> </div> </nav> </div> </header> <div class="wrapper post"> <main class="page-content" aria-label="Content"> <article itemscope itemtype="https://schema.org/BlogPosting"> <header class="header"> <div class="tags"> <!-- <span itemprop="keywords"> <a class="tag" href="/tags/#cli">CLI</a> </span> --> </div> <h1 class="header-title" itemprop="headline">WP CLI – Overview</h1> <div class="post-meta"> <time datetime="{{ date | htmlDate }}" itemprop="datePublished"> <time datetime="2022-01-19T00:00:00.000Z"> Jan 19, 2022 </time> </time> <span itemprop="author" itemscope itemtype="https://schema.org/Person"> <span itemprop="name">Sharif Mohammad Eunus</span> </span> <time hidden datetime="{{ date | htmlDate }}" itemprop="dateModified"> <time datetime="2022-01-19T00:00:00.000Z"> Jan 19, 2022 </time> </time> <span hidden itemprop="publisher" itemtype="Person">Sharif Mohammad Eunus</span> </div> </header> <div class="page-content" itemprop="articleBody">  <p>WP CLI enables the management of WordPress admin actions through the command line. This tool is particularly useful for performing actions that are typically done from the admin area, especially those that are more complex.</p>
+<h2 id="installing-wp-cli">Installing WP CLI</h2>
+<p>WP CLI might already be installed if you are using a managed hosting service. To check if WP CLI is installed, run the following command in your terminal:</p>
+<pre class="astro-code aurora-x" style="background-color:#07090F;color:#bbbbbb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#FFCB6B">wp</span><span style="color:#C3E88D"> --info</span></span>
+<span class="line"></span></code></pre>
+<p>If WP CLI is installed, this command will output the WP CLI version at the end. For detailed instructions on how to install WP CLI on various platforms, refer to <a href="https://deliciousbrains.com/complete-guide-to-installing-wp-cli/">The Complete Guide to Installing WP-CLI</a>.</p>
+<h2 id="download-or-reinstall-the-wp-core">Download or Reinstall the WP Core</h2>
+<p>To download the latest WordPress core, use:</p>
+<pre class="astro-code aurora-x" style="background-color:#07090F;color:#bbbbbb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#FFCB6B">wp</span><span style="color:#C3E88D"> core</span><span style="color:#C3E88D"> download</span></span>
+<span class="line"></span></code></pre>
+<p>Options include:
+<code>--force</code>: Overrides the existing installation. Use this if you’re reinstalling and WP is already in the target directory.
+<code>--skip-content</code>: Skips downloading the <code>wp-content</code> folder, thus excluding default themes and plugins.
+<code>--version</code>: Specifies the version of WordPress to install. If not set, the latest version is installed.</p>
+<h2 id="reinstalling-wordpress-core-files">Reinstalling WordPress Core Files</h2>
+<ol>
+<li>Verify core files with <code>wp core verify-checksums</code>.</li>
+<li>Check the currently installed version with <code>wp core version</code> to avoid accidental updates.</li>
+<li>Ensure you’re in the root directory (e.g., <code>public_html</code>).</li>
+<li>Download the core using:</li>
+</ol>
+<pre class="astro-code aurora-x" style="background-color:#07090F;color:#bbbbbb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#FFCB6B">wp</span><span style="color:#C3E88D"> core</span><span style="color:#C3E88D"> download</span><span style="color:#C3E88D"> --skip-content</span><span style="color:#C3E88D"> --force</span><span style="color:#C3E88D"> --version=</span><span style="color:#89DDFF">[</span><span style="color:#C3E88D">NUMBER</span><span style="color:#89DDFF">]</span></span>
+<span class="line"></span></code></pre>
+<h2 id="install-plugins-and-themes">Install Plugins and Themes</h2>
+<p>To install a plugin or theme:</p>
+<pre class="astro-code aurora-x" style="background-color:#07090F;color:#bbbbbb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#FFCB6B">wp</span><span style="color:#C3E88D"> plugin</span><span style="color:#C3E88D"> install</span><span style="color:#C3E88D"> woocommerce</span></span>
+<span class="line"><span style="color:#FFCB6B">wp</span><span style="color:#C3E88D"> theme</span><span style="color:#C3E88D"> install</span><span style="color:#C3E88D"> astra</span></span>
+<span class="line"></span></code></pre>
+<h2 id="delete-a-plugin-or-theme">Delete a Plugin or Theme</h2>
+<pre class="astro-code aurora-x" style="background-color:#07090F;color:#bbbbbb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#FFCB6B">wp</span><span style="color:#C3E88D"> plugin</span><span style="color:#C3E88D"> delete</span><span style="color:#C3E88D"> woocommerce</span></span>
+<span class="line"><span style="color:#FFCB6B">wp</span><span style="color:#C3E88D"> theme</span><span style="color:#C3E88D"> delete</span><span style="color:#C3E88D"> astra</span></span>
+<span class="line"></span></code></pre>
+<h2 id="deactivate-a-plugin-or-theme">Deactivate a Plugin or Theme</h2>
+<pre class="astro-code aurora-x" style="background-color:#07090F;color:#bbbbbb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#FFCB6B">wp</span><span style="color:#C3E88D"> plugin</span><span style="color:#C3E88D"> deactivate</span><span style="color:#C3E88D"> woocommerce</span></span>
+<span class="line"><span style="color:#FFCB6B">wp</span><span style="color:#C3E88D"> theme</span><span style="color:#C3E88D"> deactivate</span><span style="color:#C3E88D"> astra</span></span>
+<span class="line"></span></code></pre>
+<p>Additional options for installation:</p>
+<ul>
+<li><code>--force</code>: Reinstalls the plugin or theme.</li>
+<li><code>--skip-plugins</code> and <code>--skip-themes</code>: Skips initialization of plugins and themes to prevent fatal errors.</li>
+<li><code>--activate</code>: Activates the plugin or theme after installation.</li>
+<li><code>--version</code>: Specifies the version to install.</li>
+</ul>
+<p>Example for reinstalling a plugin or theme:</p>
+<pre class="astro-code aurora-x" style="background-color:#07090F;color:#bbbbbb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#FFCB6B">wp</span><span style="color:#C3E88D"> plugin</span><span style="color:#C3E88D"> install</span><span style="color:#C3E88D"> woocommerce</span><span style="color:#C3E88D"> --force</span><span style="color:#C3E88D"> --skip-plugins</span><span style="color:#C3E88D"> --skip-themes</span></span>
+<span class="line"><span style="color:#FFCB6B">wp</span><span style="color:#C3E88D"> theme</span><span style="color:#C3E88D"> install</span><span style="color:#C3E88D"> astra</span><span style="color:#C3E88D"> --force</span><span style="color:#C3E88D"> --skip-plugins</span><span style="color:#C3E88D"> --skip-themes</span></span>
+<span class="line"></span></code></pre>
+<h2 id="reset-user-password">Reset User Password</h2>
+<p>If the reset password email fails to send, you can change a user’s password with WP CLI:</p>
+<pre class="astro-code aurora-x" style="background-color:#07090F;color:#bbbbbb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#FFCB6B">wp</span><span style="color:#C3E88D"> user</span><span style="color:#C3E88D"> update</span><span style="color:#F78C6C"> 123</span><span style="color:#C3E88D"> --user-pass=newpass</span></span>
+<span class="line"></span></code></pre>
+<ul>
+<li><code>123</code> is the user ID, but you can also use the user’s email or username.</li>
+<li>To list users, use <code>wp user list</code></li>
+</ul>  </div> </article> </main> <main> <article> <div class="hero-image">  </div> <div class="prose"> <div class="title"> <div class="date"> <time datetime="2022-01-19T00:00:00.000Z"> Jan 19, 2022 </time>  </div> <h1>WP CLI – Overview</h1> <hr> </div>  <p>WP CLI enables the management of WordPress admin actions through the command line. This tool is particularly useful for performing actions that are typically done from the admin area, especially those that are more complex.</p>
+<h2 id="installing-wp-cli">Installing WP CLI</h2>
+<p>WP CLI might already be installed if you are using a managed hosting service. To check if WP CLI is installed, run the following command in your terminal:</p>
+<pre class="astro-code aurora-x" style="background-color:#07090F;color:#bbbbbb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#FFCB6B">wp</span><span style="color:#C3E88D"> --info</span></span>
+<span class="line"></span></code></pre>
+<p>If WP CLI is installed, this command will output the WP CLI version at the end. For detailed instructions on how to install WP CLI on various platforms, refer to <a href="https://deliciousbrains.com/complete-guide-to-installing-wp-cli/">The Complete Guide to Installing WP-CLI</a>.</p>
+<h2 id="download-or-reinstall-the-wp-core">Download or Reinstall the WP Core</h2>
+<p>To download the latest WordPress core, use:</p>
+<pre class="astro-code aurora-x" style="background-color:#07090F;color:#bbbbbb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#FFCB6B">wp</span><span style="color:#C3E88D"> core</span><span style="color:#C3E88D"> download</span></span>
+<span class="line"></span></code></pre>
+<p>Options include:
+<code>--force</code>: Overrides the existing installation. Use this if you’re reinstalling and WP is already in the target directory.
+<code>--skip-content</code>: Skips downloading the <code>wp-content</code> folder, thus excluding default themes and plugins.
+<code>--version</code>: Specifies the version of WordPress to install. If not set, the latest version is installed.</p>
+<h2 id="reinstalling-wordpress-core-files">Reinstalling WordPress Core Files</h2>
+<ol>
+<li>Verify core files with <code>wp core verify-checksums</code>.</li>
+<li>Check the currently installed version with <code>wp core version</code> to avoid accidental updates.</li>
+<li>Ensure you’re in the root directory (e.g., <code>public_html</code>).</li>
+<li>Download the core using:</li>
+</ol>
+<pre class="astro-code aurora-x" style="background-color:#07090F;color:#bbbbbb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#FFCB6B">wp</span><span style="color:#C3E88D"> core</span><span style="color:#C3E88D"> download</span><span style="color:#C3E88D"> --skip-content</span><span style="color:#C3E88D"> --force</span><span style="color:#C3E88D"> --version=</span><span style="color:#89DDFF">[</span><span style="color:#C3E88D">NUMBER</span><span style="color:#89DDFF">]</span></span>
+<span class="line"></span></code></pre>
+<h2 id="install-plugins-and-themes">Install Plugins and Themes</h2>
+<p>To install a plugin or theme:</p>
+<pre class="astro-code aurora-x" style="background-color:#07090F;color:#bbbbbb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#FFCB6B">wp</span><span style="color:#C3E88D"> plugin</span><span style="color:#C3E88D"> install</span><span style="color:#C3E88D"> woocommerce</span></span>
+<span class="line"><span style="color:#FFCB6B">wp</span><span style="color:#C3E88D"> theme</span><span style="color:#C3E88D"> install</span><span style="color:#C3E88D"> astra</span></span>
+<span class="line"></span></code></pre>
+<h2 id="delete-a-plugin-or-theme">Delete a Plugin or Theme</h2>
+<pre class="astro-code aurora-x" style="background-color:#07090F;color:#bbbbbb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#FFCB6B">wp</span><span style="color:#C3E88D"> plugin</span><span style="color:#C3E88D"> delete</span><span style="color:#C3E88D"> woocommerce</span></span>
+<span class="line"><span style="color:#FFCB6B">wp</span><span style="color:#C3E88D"> theme</span><span style="color:#C3E88D"> delete</span><span style="color:#C3E88D"> astra</span></span>
+<span class="line"></span></code></pre>
+<h2 id="deactivate-a-plugin-or-theme">Deactivate a Plugin or Theme</h2>
+<pre class="astro-code aurora-x" style="background-color:#07090F;color:#bbbbbb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#FFCB6B">wp</span><span style="color:#C3E88D"> plugin</span><span style="color:#C3E88D"> deactivate</span><span style="color:#C3E88D"> woocommerce</span></span>
+<span class="line"><span style="color:#FFCB6B">wp</span><span style="color:#C3E88D"> theme</span><span style="color:#C3E88D"> deactivate</span><span style="color:#C3E88D"> astra</span></span>
+<span class="line"></span></code></pre>
+<p>Additional options for installation:</p>
+<ul>
+<li><code>--force</code>: Reinstalls the plugin or theme.</li>
+<li><code>--skip-plugins</code> and <code>--skip-themes</code>: Skips initialization of plugins and themes to prevent fatal errors.</li>
+<li><code>--activate</code>: Activates the plugin or theme after installation.</li>
+<li><code>--version</code>: Specifies the version to install.</li>
+</ul>
+<p>Example for reinstalling a plugin or theme:</p>
+<pre class="astro-code aurora-x" style="background-color:#07090F;color:#bbbbbb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#FFCB6B">wp</span><span style="color:#C3E88D"> plugin</span><span style="color:#C3E88D"> install</span><span style="color:#C3E88D"> woocommerce</span><span style="color:#C3E88D"> --force</span><span style="color:#C3E88D"> --skip-plugins</span><span style="color:#C3E88D"> --skip-themes</span></span>
+<span class="line"><span style="color:#FFCB6B">wp</span><span style="color:#C3E88D"> theme</span><span style="color:#C3E88D"> install</span><span style="color:#C3E88D"> astra</span><span style="color:#C3E88D"> --force</span><span style="color:#C3E88D"> --skip-plugins</span><span style="color:#C3E88D"> --skip-themes</span></span>
+<span class="line"></span></code></pre>
+<h2 id="reset-user-password">Reset User Password</h2>
+<p>If the reset password email fails to send, you can change a user’s password with WP CLI:</p>
+<pre class="astro-code aurora-x" style="background-color:#07090F;color:#bbbbbb; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#FFCB6B">wp</span><span style="color:#C3E88D"> user</span><span style="color:#C3E88D"> update</span><span style="color:#F78C6C"> 123</span><span style="color:#C3E88D"> --user-pass=newpass</span></span>
+<span class="line"></span></code></pre>
+<ul>
+<li><code>123</code> is the user ID, but you can also use the user’s email or username.</li>
+<li>To list users, use <code>wp user list</code></li>
+</ul>  </div> </article> </main> </div> <footer class="footer"> <!-- {# <a class="footer_item" href="/feed.xml">rss</a> #} --> <span class="footer_item">&copy; 2024</span> </footer>  </body></html>
