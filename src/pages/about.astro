@@ -1,0 +1,40 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body data-theme="dark" class="notransition">
+		<Header />
+		<div class="wrapper">
+			<main class="page-content" aria-label="Content">
+				<p>👋</p>
+				<h2 id="im-sharif-mohammad-eunus">I’m Sharif Mohammad Eunus</h2>
+				<p>From Dhaka, Bangladesh 🇧🇩</p>
+				<p>
+					Currently exploring Linux servers and working remotely for a USA-based
+					company as a Hosting Support Engineer. I enjoy creating websites with
+					React, Laravel, and WordPress and learning new things.
+				</p>
+				<ul>
+					<li>
+						<a
+							href="https://www.linkedin.com/in/sharif-mohammad-eunus-a962b310b/"
+							>LinkedIN</a
+						>
+					</li>
+					<li><a href="https://github.com/shariffff">Github</a></li>
+					<li><a href="https://twitter.com/smEunus">Twitter</a></li>
+				</ul>
+			</main>
+		</div>
+
+		<Footer />
+	</body>
+</html>
