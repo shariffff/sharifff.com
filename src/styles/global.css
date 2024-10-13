@@ -632,7 +632,6 @@ mark,
 .post-item .post-item-date {
 	min-width: 96px;
 	color: #0d122b;
-	font-weight: 700;
 	padding-right: 10px;
 	flex-shrink: 0;
 }
@@ -647,7 +646,6 @@ mark,
 	margin: 0;
 	border: 0;
 	padding: 0;
-	font-size: 16px;
 	font-weight: normal;
 	letter-spacing: 0.1px;
 }
