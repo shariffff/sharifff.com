@@ -68,8 +68,8 @@ body {
 	font-feature-settings: 'kern' 1;
 	font-kerning: normal;
 	box-sizing: border-box;
-	font-size: 0.95rem;
-	line-height: 2.25;
+	font-size: 1.1rem;
+	line-height: 1.6;
 }
 
 h1,
@@ -857,7 +857,8 @@ mark,
 
 .page-content {
 	padding-top: 8px;
-	display: grid;
+	display: flex;
+	flex-direction: column;
 	gap: 1.5rem;
 }
 
