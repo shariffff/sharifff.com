@@ -1494,3 +1494,10 @@ code[class*='language-'],
 pre[class*='language-'] {
 	font-family: var(--code-font-family);
 }
+
+article p > code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 4px;
+	font-size: 85%;
+	padding: 0.2em 0.4em;
+}
