@@ -29,7 +29,7 @@ Now, paste the copied content into the `index.html` file. If you revisit `/hello
 ```nginx
 server {
     root /var/www/html;
-    index index.html index.htm index.nginx-debian.html;
+    index index.html index.htm;
 
     location / {
         try_files $uri $uri/ =404;
@@ -107,7 +107,7 @@ add_action( 'template_redirect', function () use ( $cache_folder ) {
 
     // Serve the cached file if it exists.
     if ( file_exists( $cache_file ) ) {
-        echo file_get_contents( $cache_file ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+        echo file_get_contents( $cache_file );
         echo '<!-- Served from mini-cache -->';
         exit;
     }
