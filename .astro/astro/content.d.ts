@@ -165,6 +165,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"wordpress-page-caching.md": {
+	id: "wordpress-page-caching.md";
+  slug: "wordpress-page-caching";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "wp-cli-overview.md": {
 	id: "wp-cli-overview.md";
   slug: "wp-cli-overview";
